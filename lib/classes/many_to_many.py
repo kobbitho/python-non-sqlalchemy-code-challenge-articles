@@ -29,7 +29,7 @@ class Author:
 
     def add_article(self, magazine, title):
         if magazine not in self.magazines:
-            raise ValueError('The specified magazine is not associated with this author')
+            raise ValueError('The specified magazine is not associated with this author.')
         article = Article(self, magazine, title)
         self.articles.append(article)
         magazine.add_article(article)
