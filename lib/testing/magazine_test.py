@@ -38,8 +38,8 @@ class TestMagazine(unittest.TestCase):
         # assert magazine_2.name == "AD"
 
         # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-           #  Magazine(2, "Numbers")
+        with pytest.raises(Exception):
+             Magazine(2, "Numbers")
 
     def test_name_len(self):
         """magazine name is between 2 and 16 characters, inclusive"""
@@ -58,12 +58,12 @@ class TestMagazine(unittest.TestCase):
         #assert magazine_2.name == "AD"
 
         # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     magazine_1.name = "New Yorker Plus X"
+        #with pytest.raises(Exception):
+             #magazine_1.name = "New Yorker Plus X"
 
         # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-        #     magazine_2.name = "A"
+        #with pytest.raises(Exception):
+             #magazine_2.name = "A"
 
     def test_has_category(self):
         """Magazine is initialized with a category"""
@@ -91,8 +91,8 @@ class TestMagazine(unittest.TestCase):
         #assert magazine_2.category == "Architecture"
 
         # uncomment the next two lines if using Exceptions
-        # with pytest.raises(Exception):
-            #Magazine_1.category = ""
+        #with pytest.raises(Exception):
+             #Magazine_1.category = ""
 
     def test_category_len(self):
         """magazine category has length greater than 0"""

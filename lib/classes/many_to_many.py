@@ -1,4 +1,3 @@
-import unittest 
 class Article:
      def __init__(self, author, magazine, title):
          if not isinstance(title, str) or not 5 <= len(title) <= 50:
@@ -52,9 +51,8 @@ class Magazine:
         self.contributors = []
         
     def articles(self):
-        pass
-
-    def add_article(self, article):
+        return self.articles
+    def add_article(self,article):
         if article.magazine != self:
             raise ValueError("The specified article is not associated with this magazine.")
         self.articles.append(article)
@@ -67,23 +65,3 @@ class Magazine:
         return [author.name for author in self.contributors]
         
     
-class TestMagazine(unittest.TestCase):
-    def test_contributing_authors(self):
-        """returns author list who have written more than 2 articles for the magazine"""
-        from classes.many_to_many import Author, Magazine, Article
-
-        author_1 = Author("Carry Bradshaw")
-        author_2 = Author("Nathaniel Hawthorne")
-        magazine_1 = Magazine("Vogue", "Fashion")
-        magazine_2 = Magazine("AD", "Architecture")
-        Article(author_1, magazine_1, "How to wear a tutu with style")
-        Article(author_1, magazine_1, "How to be single and happy")
-        Article(author_1, magazine_1, "Dating life in NYC")
-        Article(author_1, magazine_2, "Carrara Marble is so 2020")
-        Article(author_2, magazine_2, "2023 Eccentric Design Trends")
-
-        self.assertEqual(magazine_1.contributing_authors(), {"Carry Bradshaw"})
-        self.assertEqual(magazine_2.contributing_authors(), {"Nathaniel Hawthorne"})
-
-if __name__ == '__main__':
-    unittest.main()
